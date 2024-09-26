@@ -25,7 +25,7 @@ from .views import root_view
 urlpatterns = [
     path("", root_view, name="root"),
     path('admin/', admin.site.urls),
-    path('api/', include('events.urls')),
+    path('events/', include('events.urls')),
     path('users/', include('users.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

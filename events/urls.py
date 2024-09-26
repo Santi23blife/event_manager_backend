@@ -1,7 +1,6 @@
-from rest_framework.routers import DefaultRouter
-from .views import EventViewSet
+from .views import EventView
+from django.urls import path
 
-router = DefaultRouter()
-router.register(r'events', EventViewSet, basename='event')
-
-urlpatterns = router.urls
+urlpatterns = [
+    path('createEvent/', EventView.as_view(), name='createEvent'),
+]
